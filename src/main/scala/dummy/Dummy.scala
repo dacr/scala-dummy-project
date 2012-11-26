@@ -17,7 +17,7 @@
 package dummy
 
 object Dummy {
-  val message = "Hello "+util.Properties.userName
+  val message = "Hello %s by %s release %s".format(util.Properties.userName, MetaInfo.projectName, MetaInfo.version)
   def main(args:Array[String]) {
     println(message)
   }
