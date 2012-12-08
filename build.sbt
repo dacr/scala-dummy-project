@@ -4,20 +4,21 @@ seq(assemblySettings: _*)
 
 name := "ScalaDummyProject"
 
-version := "0.1.3"
+version := "2"
 
-scalaVersion := "2.9.2"
+scalaVersion := "2.10.0-RC3"
 
-scalacOptions ++= Seq("-unchecked", "-deprecation")
+scalacOptions ++= Seq("-unchecked", "-deprecation" )
 
 mainClass in assembly := Some("dummy.Dummy")
 
 jarName in assembly := "dummy.jar"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "1.8" % "test"
+libraryDependencies += "org.scalatest" % "scalatest_2.10.0-RC3" % "2.0.M5-B1"
 
 libraryDependencies += "junit" % "junit" % "4.10" % "test"
 
+initialCommands in console := """import dummy._"""
 
 sourceGenerators in Compile <+= 
  (sourceManaged in Compile, version, name, jarName in assembly) map {
@@ -27,7 +28,7 @@ sourceGenerators in Compile <+=
   """package dummy
     |object MetaInfo { 
     |  val version="%s"
-    |  val projectName="%s"
+    |  val project="%s"
     |  val jarbasename="%s"
     |}
     |""".stripMargin.format(version, projectname, jarexe.split("[.]").head) )
