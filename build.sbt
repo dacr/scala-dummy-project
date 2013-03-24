@@ -4,9 +4,9 @@ seq(assemblySettings: _*)
 
 name := "ScalaDummyProject"
 
-version := "v2013-02-15"
+version := "v2013-03-24"
 
-scalaVersion := "2.10.0"
+scalaVersion := "2.10.1"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation" )
 
