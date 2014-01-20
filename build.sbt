@@ -4,9 +4,9 @@ seq(assemblySettings: _*)
 
 name := "ScalaDummyProject"
 
-version := "v2013-07-28"
+version := "v2014-01-20"
 
-scalaVersion := "2.10.2"
+scalaVersion := "2.10.3"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation" )
 
@@ -14,7 +14,7 @@ mainClass in assembly := Some("dummy.Dummy")
 
 jarName in assembly := "dummy.jar"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.+" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.0.+" % "test"
 
 libraryDependencies += "junit" % "junit" % "4.+" % "test"
 
