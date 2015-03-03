@@ -1,7 +1,3 @@
-import AssemblyKeys._
-
-seq(assemblySettings: _*)
-
 name := "ScalaDummyProject"
 
 version := "v2015-02-03"
