@@ -1,10 +1,10 @@
 name := "ScalaDummyProject"
 
-version := "v2015-05-17"
+version := "2015.8.13"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
-scalacOptions ++= Seq("-unchecked", "-deprecation" , "-feature")
+scalacOptions ++= Seq("-unchecked", "-deprecation" , "-feature", "-language:implicitConversions")
 
 mainClass in assembly := Some("dummy.Dummy")
 
