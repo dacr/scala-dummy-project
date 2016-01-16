@@ -1,6 +1,6 @@
 name := "ScalaDummyProject"
 
-version := "2015.8.13"
+version := "2016.1.16"
 
 scalaVersion := "2.11.7"
 
@@ -10,9 +10,9 @@ mainClass in assembly := Some("dummy.Dummy")
 
 jarName in assembly := "dummy.jar"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.+" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"
 
-libraryDependencies += "junit" % "junit" % "4.+" % "test"
+libraryDependencies += "junit" % "junit" % "4.12" % "test"
 
 initialCommands in console := """import dummy._"""
 
