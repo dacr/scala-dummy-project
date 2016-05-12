@@ -1,8 +1,8 @@
 name := "ScalaDummyProject"
 
-version := "2016.1.16"
+version := "2016.5.12"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation" , "-feature", "-language:implicitConversions")
 
