@@ -16,13 +16,10 @@
 
 package dummy
 
-import org.junit.runner.RunWith
-import org.scalatest.FunSuite
-import org.scalatest.ShouldMatchers
-import org.scalatest.junit.JUnitRunner
+import org.scalatest._
+import Matchers._
 
-@RunWith(classOf[JUnitRunner])
-class DummyTest extends FunSuite with ShouldMatchers {
+class DummyTest extends FunSuite  {
   
   test("Simple test") {
     Dummy.message should startWith("Hello")
@@ -30,3 +27,4 @@ class DummyTest extends FunSuite with ShouldMatchers {
   }
   
 }
+

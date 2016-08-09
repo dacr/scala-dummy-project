@@ -1,6 +1,6 @@
 name := "ScalaDummyProject"
 
-version := "2016.5.12"
+version := "2016.8.9"
 
 scalaVersion := "2.11.8"
 
@@ -10,7 +10,7 @@ mainClass in assembly := Some("dummy.Dummy")
 
 jarName in assembly := "dummy.jar"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % "test"
 
 libraryDependencies += "junit" % "junit" % "4.12" % "test"
 
