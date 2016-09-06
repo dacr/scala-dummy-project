@@ -14,7 +14,10 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % "test"
 
 libraryDependencies += "junit" % "junit" % "4.12" % "test"
 
-initialCommands in console := """import dummy._"""
+initialCommands in console := """
+   |import dummy._
+   |""".stripMargin
+
 
 sourceGenerators in Compile <+= 
  (sourceManaged in Compile, version, name, jarName in assembly) map {
