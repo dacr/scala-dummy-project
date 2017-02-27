@@ -10,7 +10,10 @@ mainClass in assembly := Some("dummy.Dummy")
 
 jarName in assembly := "dummy.jar"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+libraryDependencies ++= Seq(
+  "ch.qos.logback" %  "logback-classic" % "1.2.1",
+  "org.scalatest"  %% "scalatest"       % "3.0.1" % "test"
+)
 
 initialCommands in console := """
    |import dummy._
