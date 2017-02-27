@@ -2,7 +2,7 @@ A scala project skeleton, SBT based, with some SBT plugins enabled (eclipse and 
 
 Edit (or create) the file ~/.sbt/0.13/plugins.sbt and add the following line to enable eclipse plugin :
 ```
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.5.0")
+addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.1.0")
 ```
 
 So now everything is ready to use the skeleton :
