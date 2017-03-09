@@ -9,4 +9,4 @@ target/
 .cache
 .settings
 .ensime
-
+.DS_Store

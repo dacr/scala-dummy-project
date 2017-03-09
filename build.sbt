@@ -1,14 +1,12 @@
-name := "ScalaDummyProject"
-
-version := "2017.2.27"
+name := "scala-dummy-project"
+organization := "org.dummy"
+version := "2017.3.9"
 
 scalaVersion := "2.11.8"
-
 scalacOptions ++= Seq("-unchecked", "-deprecation" , "-feature", "-language:implicitConversions")
 
 mainClass in assembly := Some("dummy.Dummy")
-
-jarName in assembly := "dummy.jar"
+assemblyJarName := "dummy.jar"
 
 libraryDependencies ++= Seq(
   "ch.qos.logback" %  "logback-classic" % "1.2.1",
@@ -22,24 +20,19 @@ initialCommands in console := """
 
 sourceGenerators in Compile +=  Def.task {
   val dir = (sourceManaged in Compile).value
-  val projectVersion = version.value
-  val projectName = name.value
   val jarbasename = (assemblyJarName in assembly).value.split("[.]").head
-  val file = dir / "dummy" / "MetaInfo.scala"
-  val sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-  val buildate = sdf.format(new java.util.Date())
+  val file = dir / "dummy" / "ProjectMetaInfo.scala"
+  val fiso = java.time.format.DateTimeFormatter.ISO_INSTANT
+  val buildate = java.time.ZonedDateTime.now().format(fiso)
   IO.write(file,
-  """package dummy 
-    |object MetaInfo {
+  """package dummy
+    |object ProjectMetaInfo {
+    |  val name="%s"
     |  val version="%s"
-    |  val project="%s"
     |  val buildate="%s"
     |  val jarbasename="%s"
     |  val appcode="dummy"
     |}
-    |""".stripMargin.format(projectVersion, projectName, buildate, jarbasename) )
+    |""".stripMargin.format(name.value, version.value, buildate, jarbasename) )
   Seq(file)
 }.taskValue
-
-
-

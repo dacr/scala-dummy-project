@@ -22,7 +22,7 @@ import Matchers._
 class DummyTest extends FunSuite  {
   
   test("Simple test") {
-    Dummy.message should startWith("Hello")
+    Dummy.getMessage() should startWith("Hello")
     info("Test done")
   }
   

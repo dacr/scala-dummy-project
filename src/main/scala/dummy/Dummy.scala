@@ -17,12 +17,21 @@
 package dummy
 
 object Dummy {
-  import MetaInfo._
   val logger = org.slf4j.LoggerFactory.getLogger(getClass)
+  
+  import ProjectMetaInfo._
   val userName = util.Properties.userName
-  val message = s"Hello ${userName} by ${project} release ${version}."
+  val message = s"Hello ${userName} by ${name} release ${version}."
+  
+  def getMessage():String = {
+    logger.info("getMessage={}", message)    
+    message
+  }
+  
   def main(args:Array[String]) {
-    logger.info(message)
+    val msg = getMessage()
+    
+    logger.info(msg)
     println(message)
   }
 }
