@@ -10,3 +10,4 @@ target/
 .settings
 .ensime
 .DS_Store
+dummy.log
