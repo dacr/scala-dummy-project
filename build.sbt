@@ -11,7 +11,7 @@ assemblyJarName := "dummy.jar"
 
 libraryDependencies ++= Seq(
   "ch.qos.logback" %  "logback-classic" % "1.2.3",
-  "org.scalatest"  %% "scalatest"       % "3.0.3" % "test"
+  "org.scalatest"  %% "scalatest"       % "3.0.4" % "test"
 )
 
 initialCommands in console := """
