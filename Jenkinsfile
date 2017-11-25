@@ -3,20 +3,13 @@ pipeline {
   environment { 
     LANG = 'C'
   }
-  //triggers {
-  //  pollSCM('H/2 * * * *')
-  //}
+  triggers {
+    pollSCM('H/2 * * * *')
+  }
   options {
     buildDiscarder(logRotator(numToKeepStr:'20'))
   }
   stages {
-
-    // ----------------------------- CHECKOUT
-    stage('checkout') {
-      steps {
-        checkout scm
-      }
-    }
 
     // ----------------------------- BUILD
     stage('build') {
