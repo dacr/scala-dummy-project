@@ -9,6 +9,8 @@ scalacOptions ++= Seq("-unchecked", "-deprecation" , "-feature", "-language:impl
 mainClass in assembly := Some("dummy.Dummy")
 assemblyJarName := "dummy.jar"
 
+testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-u", "target/junitresults")
+
 libraryDependencies ++= Seq(
   "ch.qos.logback" %  "logback-classic" % "1.2.3",
   "org.scalatest"  %% "scalatest"       % "3.0.4" % "test"
