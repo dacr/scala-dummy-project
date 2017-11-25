@@ -10,6 +10,12 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr:'20'))
   }
   stages {
+
+    // ----------------------------- CHECKOUT
+    stage('checkout') {
+        checkout scm
+    }
+
     // ----------------------------- BUILD
     stage('build') {
       agent { docker { image 'dacr/jenkins-docker-agent-sbt' } }
