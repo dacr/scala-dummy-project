@@ -21,7 +21,7 @@ pipeline {
       agent { 
         docker { 
 	  image 'dacr/jenkins-docker-agent-sbt'
-          args '-v ${env.HOME}/.ivy2:/home/sbt/.ivy2'
+          args '-v $HOME/.ivy2:/home/sbt/.ivy2 -v $HOME/.m2:/home/sbt/.m2'
 	}
       }
       steps {
