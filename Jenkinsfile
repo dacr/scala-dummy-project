@@ -1,3 +1,6 @@
+// Pipeline requirements :
+// - slack notification plugin
+
 pipeline {
   agent any
   environment { 
@@ -33,7 +36,21 @@ pipeline {
         sh 'java -jar target/*/dummy.jar'
       }
     }
+  }
 
+  post {
+    success {
+      slackSend(
+        failOnError:false, color:'good',
+        message: "${env.JOB_NAME} is sucessfull ! [pipeline status](${env.RUN_DISPLAY_URL})",
+      )
+    }
+    failure {
+      slackSend(
+        failOnError:false, color:'#FF0000',
+        message:"${env.JOB_NAME} **FAILURE** ! [pipeline status](${env.RUN_DISPLAY_URL})",
+      )
+    }
   }
 
 }
