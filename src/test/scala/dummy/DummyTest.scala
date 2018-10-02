@@ -17,9 +17,8 @@
 package dummy
 
 import org.scalatest._
-import Matchers._
 
-class DummyTest extends FunSuite  {
+class DummyTest extends FunSuite  with Matchers {
   
   test("Simple test") {
     Dummy.getMessage() should startWith("Hello")

@@ -1,8 +1,8 @@
 name := "scala-dummy-project"
 organization := "org.dummy"
-version := "2017.11.13"
+version := "2017.10.02"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.12.7"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation" , "-feature", "-language:implicitConversions")
 
@@ -11,7 +11,7 @@ assemblyJarName := "dummy.jar"
 
 libraryDependencies ++= Seq(
   "ch.qos.logback" %  "logback-classic" % "1.2.3",
-  "org.scalatest"  %% "scalatest"       % "3.0.4" % "test"
+  "org.scalatest"  %% "scalatest"       % "3.0.5" % "test"
 )
 
 initialCommands in console := """

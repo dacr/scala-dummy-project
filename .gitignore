@@ -11,3 +11,5 @@ target/
 .ensime
 .DS_Store
 dummy.log
+.idea
+*.iml
