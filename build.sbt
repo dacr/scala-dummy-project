@@ -1,6 +1,6 @@
 name := "scala-dummy-project"
 organization := "org.dummy"
-version := "2017.10.02"
+version := "2018.10.02"
 
 scalaVersion := "2.12.7"
 
